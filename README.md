@@ -1,4 +1,4 @@
-# CPP-Tutorials
+# CPP_Tutorials
 Repository to document my accomplished CPP learning exercises.  
 
 Tutorials:  
