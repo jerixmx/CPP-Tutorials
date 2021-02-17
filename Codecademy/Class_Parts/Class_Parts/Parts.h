@@ -15,7 +15,7 @@ public:
 	void set_qty();
 	void set_location();
 
-	bool get_availability();
+	string get_availability();
 	int get_qty();
 	string get_location();
 

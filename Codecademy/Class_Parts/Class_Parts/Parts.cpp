@@ -55,9 +55,15 @@ void Parts::set_location()
 }
 
 
-	bool Parts::get_availability()
+	string Parts::get_availability()
 	{
-		return availability;
+		if (availability == true)
+		{
+			return "Yes";
+		} 
+		else {
+			return "No";
+		}
 	}
 
 	int Parts::get_qty()
