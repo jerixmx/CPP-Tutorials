@@ -338,3 +338,7 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+# Explicitly excluded (Manual 20210403)
+Shakespeare/
+GoogleSoln/
