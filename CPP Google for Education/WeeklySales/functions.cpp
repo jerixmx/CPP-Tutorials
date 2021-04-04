@@ -21,16 +21,16 @@ int GetInput()
   
   return shoes;
 }
-double CalcMethod1()
+float CalcMethod1()
 {
 
   return straight_salary;
 }
-double CalcMethod2(int WeeklySales)
+float CalcMethod2(int WeeklySales)
 {
   return hrs_per_wk*hrly_rate + WeeklySales*hrly_commission_rate;
 }
-double CalcMethod3(int WeeklySales,int shoes)
+float CalcMethod3(int WeeklySales,int shoes)
 {
   return WeeklySales*commission_rate+shoes*commission_amt;
 }
@@ -55,7 +55,7 @@ std::string MethodReference (int i){
 }
 
 
-void PrintSalary(double Salary[], int size)
+void PrintSalary(float Salary[], int size)
 {
  
   for(int i=0;i<size;i++)
@@ -64,7 +64,7 @@ void PrintSalary(double Salary[], int size)
   }
 }
 
-void ChooseMethod(double Salary[],int size)
+void ChooseMethod(float Salary[],int size)
 {
   int max=0;
   std::string method;

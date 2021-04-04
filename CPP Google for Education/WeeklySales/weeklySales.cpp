@@ -3,7 +3,7 @@
 int main()
 {
   int WeeklySales=0;
-  double Salary[3]={0.00};
+  float Salary[3]={0.00};
   int shoes=GetInput();
   WeeklySales=shoe_price*shoes;
   Salary[0]=CalcMethod1();

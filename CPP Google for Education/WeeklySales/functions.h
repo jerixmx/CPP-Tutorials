@@ -15,8 +15,8 @@
 
 int GetInput();
 std::string MethodReference (int i);
-double CalcMethod1();
-double CalcMethod2(int WeeklySales);
-double CalcMethod3(int WeeklySales,int shoes); 
-void PrintSalary(double Salary[], int size);
-void ChooseMethod(double Salary[],int size);
+float CalcMethod1();
+float CalcMethod2(int WeeklySales);
+float CalcMethod3(int WeeklySales,int shoes); 
+void PrintSalary(float Salary[], int size);
+void ChooseMethod(float Salary[],int size);
