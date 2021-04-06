@@ -50,16 +50,11 @@ int main() {
     int T = 0;
     cin >> T;
     int num=0;
-    vector<int> n;
 
     for(int i = 0; i < T ; i++)
     {
       cin >> num;
-      n.push_back(num);
-    }      
-    for(int i = 0; i < T ; i++)
-    {
-          isPrime(n[i]) ? cout << "Prime\n" : cout <<"Not Prime\n";
+      isPrime(num) ? cout << "Prime\n" : cout <<"Not Prime\n";
     }
 
 }
