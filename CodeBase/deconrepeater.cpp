@@ -1,4 +1,5 @@
 #include "functions.h"
+
 char yn ='y';
 using std::cout;
 using std::cin;
@@ -11,6 +12,6 @@ int main()
   {
     std::cout<<"Test\n";//replace with code to repeat
     
-    yn=AskRepeat("Check another?",yn); //replace with ask phrase
+    yn=AskRepeat("Check another?"); //replace with ask phrase
   }
 }

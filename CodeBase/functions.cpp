@@ -4,8 +4,9 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-char AskRepeat(std::string Askphrase, char yn)
+char AskRepeat(std::string Askphrase)
 {
+  char yn;
   do
   {
     cout<<Askphrase<<"(y/n) ";
