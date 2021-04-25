@@ -69,8 +69,8 @@ int main()
   int check=0;
   check = GetInt("Enter number: ");
   cout << check << endl;
-  check = GetInt("Enter below 50: ","max", 50);
+  check = GetInt("Enter up to 50: ","max", 50);
   cout << check << endl;
-  check = GetInt("Enter above 50: ","min", 50);
+  check = GetInt("Enter from 50: ","min", 50);
   cout << check << endl;
 }
