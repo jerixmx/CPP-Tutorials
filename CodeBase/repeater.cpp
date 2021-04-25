@@ -1,19 +1,19 @@
 #include<iostream>
 
-char yn ='y';
+char yesno ='y';
 
 void AskRepeat(std::string Askphrase)
 {
   do
   {
     std::cout<<Askphrase<<"(y/n) ";
-    std::cin>>yn;
-  }while(!std::cin>>yn||(yn!='y'&&yn!='n'));
+    std::cin>>yesno;
+  }while(!std::cin>>yesno||(yesno!='y'&&yesno!='n'));
 }
 
 int main()
 {
-  while(yn=='y')
+  while(yesno=='y')
   {
     
     std::cout<<"Test"; //replace with code to repeat

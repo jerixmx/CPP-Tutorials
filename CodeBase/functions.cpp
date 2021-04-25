@@ -6,11 +6,11 @@ using std::endl;
 
 char AskRepeat(std::string Askphrase)
 {
-  char yn;
+  char yesno;
   do
   {
     cout<<Askphrase<<"(y/n) ";
-    cin>>yn;
-  }while(!cin>>yn||(yn!='y'&&yn!='n'&&yn!='Y'&&yn!='N'));
-  return yn;
+    cin>>yesno;
+  }while(!cin>>yesno||(yesno!='y'&&yesno!='n'&&yesno!='Y'&&yesno!='N'));
+  return yesno;
 }
