@@ -380,3 +380,4 @@ healthchecksdb
 # Explicitly excluded (Manual 20210403)
 Shakespeare/
 GoogleSoln/
+.mp4
