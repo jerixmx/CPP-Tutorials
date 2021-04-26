@@ -369,9 +369,9 @@ healthchecksdb
 *.lib
 
 # Executables
-*.exe
-*.out
-*.app
+#*.exe
+#*.out
+#*.app
 
 # End of C++ Gitignore template
 
