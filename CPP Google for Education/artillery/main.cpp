@@ -1,14 +1,23 @@
 #include "functions.h"
 
-char yesno ='y';
+using std::cout;
+using std::endl;
+
 
 int main()
 {
+  char yesno = 'y';
   StartUp(); // This displays the introductory script.
-  int killed = 0;
-  while(yesno=='y'||yesno=='Y')
+
+  do
   {
-    killed=Fire();
-    yesno=AskRepeat("I see another one, care to shoot again?"); //replace with ask phrase
+    int killed = 0;
+    killed=Fire(killed);
+    cout << "\nYou killed " << killed << " of the enemies this time." << endl;
+    cout << "\n=============\n++GAME OVER++\n=============\n\n";
+    yesno=AskRepeat("Want to play again? "); 
+    //reset
   }
+  while(yesno=='y'||yesno=='Y');
+  cout << "\nThanks for playing Artillery!\n\n";
 }

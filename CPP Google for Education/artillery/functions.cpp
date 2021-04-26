@@ -26,9 +26,9 @@ void StartUp()
 {
   cout << "\nWelcome to Artillery." << endl;
   cout << "You are in the middle of a war and being charged by thousands of enemies." << endl;
-  cout << "You have one cannon, which you can shoot at any angle." << endl;
-  cout << "You only have 10 cannonballs for this target.." << endl;
-  cout << "Let's begin...\n\n";
+  cout << "You have one cannon, which you can swing from zero to 45 degrees." << endl;
+  cout << "You can only fire 10 cannonballs per target.." << endl;
+  cout << "Let's begin...\n";
 }
 
 int EnemyDistance()
@@ -59,7 +59,7 @@ float GetAngle(std::string Askphrase, std::string min_max, float limit)
   {
     cout << Askphrase;
     cin >> return_var;
-    if(cin.fail() || return_var < 0)
+    if(cin.fail() || return_var < 0 || limitCheck(return_var,min_max,limit))
     {
       cin.clear();
       cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
@@ -82,26 +82,26 @@ float PlayerDistance (float angle, float time_in_air)
   return velocity * cos(angle) * time_in_air;
 }
 
-int Fire()
+int Fire(int kills)
 {
   char yesno ='y';
-  int kills = 0;
   int enemy_distance = 0;
   float player_distance = 0; 
   int difference = 0;
   float player_angle = 0;
   int shots = 0;
+  bool killed = 0;
   //while ++shots < 10
-  while (shots < 10)
+  do
   {
     //Get random distance int
     enemy_distance = EnemyDistance();
-    cout << "The enemy is " << enemy_distance << " feet away!!!" << endl;
+    cout << "\nThe enemy is " << enemy_distance << " feet away!!!" << endl;
     
     do
     {
       //Get angle in degrees from user and convert to radians
-      player_angle = DegToRadians(GetAngle("What angle? ","max",90)); 
+      player_angle = DegToRadians(GetAngle("What angle? (0-45) ","max",45)); 
       
       //Increment shots taken
       shots++;
@@ -112,14 +112,20 @@ int Fire()
       //Check int difference between enemy distance and player distance
       difference = player_distance-enemy_distance;
       if (difference != 0)
-        cout << "You overshot by " << difference << endl;
+      {
+        cout << "\nYou overshot by " << difference << endl;
+        if(shots<10)
+          cout << "\nYou have " << 10 - shots <<" shots remaining\n";
+      }
     }
     while(difference != 0 && shots < 10);
     
-    if (shots>=10)
+    if (shots>=10 && difference != 0)
     {
-      cout << "You ran out of shots. \n";
-      return kills;
+      cout << "\nYou ran out of canonballs. You must retreat. \n";
+      shots = 0;
+      killed = 1;
+      break;
     }
 
     //If zero
@@ -129,37 +135,28 @@ int Fire()
       kills++;
       
       //Notify hit
-      cout << "You hit him!!!" << endl;
+      cout << "\n**You hit him!!!**" << endl;
 
       //Show number of shots 
-      cout << "It took you " << shots << " shots." << endl;
+      std::string str = (shots==1) ? " shot" : " shots";
+      cout << "It took you " << shots << " " << str << endl;
 
       //Show number of enemies killed
-      cout << "You have killed " << kills << " enemy." << endl;
+      str = (kills == 1) ? "enemy" : "enemies";
+      cout << "You have killed " << kills << " " << str << endl;
 
-      //If shots<10
-      if ( shots < 10)
-      {
-        while(yesno=='y'||yesno=='Y')
-        {
-          Fire();
-          //Ask to play again
-          yesno=AskRepeat("I see another one, are you ready?"); //replace with ask phrase
-          //replenish shots;
-          shots = 0;
-        }
-        if (yesno == 'n' || yesno == 'N')
-        {
-          return kills;
-        }
-      }
-      else
-      {
-        return kills;
-      }
 
-    }  
-
+      cout << "\nI see another one. Are you ready? (Y/N) ";
+      cin >> yesno;
+      shots = 0;      
+    }
+    
   }
+  while (killed == 0 && (yesno == 'y' || yesno == 'Y') );
+  if (killed ==0)
+  {
+    cout << "\nYou were killed by the enemy.\n";
+  }
+  
   return kills;
 }

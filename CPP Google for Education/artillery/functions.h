@@ -13,7 +13,8 @@ const float pi = 3.14159265;
 const int max_distance = 1242;
 const int min_distance = 43;
 
+
 char AskRepeat(std::string Askphrase);
 void StartUp();
 int EnemyDistance();
-int Fire();
+int Fire (int kills);
