@@ -7,17 +7,24 @@ using std::endl;
 int main()
 {
   char yesno = 'y';
-  StartUp(); // This displays the introductory script.
+  //Display intro script
+  StartUp();
 
+  //Game
   do
   {
-    int killed = 0;
-    killed=Fire(killed);
-    cout << "\nYou killed " << killed << " of the enemies this time." << endl;
+    //Set to zero to reset kills per game.
+    int kills = 0; 
+
+    kills=Fire(kills);
+    
+    cout << "\nYou killed " << kills << " of the enemies this time." << endl;
     cout << "\n=============\n++GAME OVER++\n=============\n\n";
+    
     yesno=AskRepeat("Want to play again? "); 
-    //reset
   }
   while(yesno=='y'||yesno=='Y');
+
   cout << "\nThanks for playing Artillery!\n\n";
+
 }
