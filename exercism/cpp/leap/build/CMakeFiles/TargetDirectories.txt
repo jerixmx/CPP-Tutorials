@@ -1,0 +1,4 @@
+/mnt/42324F4B324F4361/PC Documents/01 - Jeri/Visual Studio/source/repos/CPP Tutorials/exercism/cpp/leap/build/CMakeFiles/rebuild_cache.dir
+/mnt/42324F4B324F4361/PC Documents/01 - Jeri/Visual Studio/source/repos/CPP Tutorials/exercism/cpp/leap/build/CMakeFiles/test_leap.dir
+/mnt/42324F4B324F4361/PC Documents/01 - Jeri/Visual Studio/source/repos/CPP Tutorials/exercism/cpp/leap/build/CMakeFiles/edit_cache.dir
+/mnt/42324F4B324F4361/PC Documents/01 - Jeri/Visual Studio/source/repos/CPP Tutorials/exercism/cpp/leap/build/CMakeFiles/leap.dir
